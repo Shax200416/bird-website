@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Catalog</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<header class="navbar">
+		<div class="nav-left">
+			<img src="img/logo1-removebg-preview.png" class="logo">
+			<h2 class="site-title">
+				<a href="index.html">Classification Birds</a>
+			</h2>
+		</div>
+
+		<div class="nav-right">
+			<a href="index.html" data-i18n="nav_home">Home</a>
+			<a href="catalog.html" data-i18n="nav_catalog">Catalog</a>
+			<div class="language-switcher">
+				<button class="lang-btn" id="current-lang">
+					<img id="current-flag" src="img/flagsen.png" alt="EN">
+					<span id="current-text">EN</span>
+				</button>
+
+				<div class="lang-dropdown" id="lang-dropdown">
+					<button class="lang-btn" data-lang="en">
+						<img src="img/flagsen.png" alt="EN"> EN
+					</button>
+					<button class="lang-btn" data-lang="ru">
+						<img src="img/flagsru.png" alt="RU"> RU
+					</button>
+					<button class="lang-btn" data-lang="kg">
+						<img src="img/flagskg.png" alt="KG"> KG
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="catalog-controls">
+
+		<div class="filters-container">
+			<div class="left-side search-container">
+				<input type="text" id="searchInput" placeholder="Search...">
+				<img src="img/search.png" alt="search" class="search-icon">
+			</div>
+			<div class="right-side">
+				<select id="dietFilter">
+					<option value="">All</option>
+					<option value="omnivore">Omnivore</option>
+					<option value="carnivore">Carnivore</option>
+					<option value="herbivore">Herbivore</option>
+				</select>
+
+				<select id="habitatFilter">
+					<option value="">All</option>
+					<option value="urban">City</option>
+					<option value="rural">Rural</option>
+					<option value="forest">Forest</option>
+					<option value="wetland">Wetland</option>
+					<option value="mountain">Mountain</option>
+				</select>
+
+				<button id="clearFilters">Clear</button>
+			</div>
+		</div>
+		</div>
+
+	</section>
+
+
+	<section class="bird-gallery">
+		<div id="birdContainer" class="container">
+		</div>
+	</section>
+
+
+	<script src="js/data.js"></script>
+	<script src="js/lang.js"></script>
+	<script src="js/catalog.js"></script>
+</body>
+
+</html>

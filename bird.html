@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Bird</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+	<header class="navbar">
+		<div class="nav-left">
+			<div class="back-icon">
+				<a href="catalog.html" class="back-icon" title="Back">&#8592;</a>
+			</div>
+			<h2 class="site-title2">Bird</h2>
+		</div>
+
+		<div class="nav-right">
+			<div class="language-switcher">
+				<button class="lang-btn" id="current-lang">
+					<img id="current-flag" src="img/flagsen.png" alt="EN">
+					<span id="current-text">EN</span>
+				</button>
+
+				<div class="lang-dropdown" id="lang-dropdown">
+					<button class="lang-btn" data-lang="en">
+						<img src="img/flagsen.png" alt="EN"> EN
+					</button>
+					<button class="lang-btn" data-lang="ru">
+						<img src="img/flagsru.png" alt="RU"> RU
+					</button>
+					<button class="lang-btn" data-lang="kg">
+						<img src="img/flagskg.png" alt="KG"> KG
+					</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<main id="birdDetail" class="bird-detail-wrapper">
+	</main>
+
+	<script src="js/data.js"></script>
+	<script src="js/lang.js"></script>
+	<script src="js/bird.js"></script>
+</body>
+
+</html>
