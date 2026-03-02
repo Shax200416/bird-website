@@ -1,39 +1,49 @@
-/* Reset va basic */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-/* body uchun global background */
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     background: linear-gradient(
-                    rgba(34, 139, 44, 0.5), /* yashil shaffof overlay */
+                    rgba(34, 139, 44, 0.5), 
                     rgba(34, 139, 45, 0.429)
                 ),
-                url('/img/image.png') no-repeat center center fixed; /* rasmni joylash */
+                url('/img/1image.png') no-repeat center center fixed; 
     background-size: cover;
     background-attachment: fixed;
 }
 
-/* Sahifa kontentining o‘rtasini ajratish */
 .container, header, footer {
-    background-color: rgba(255, 255, 255, 0.85); /* biroz shaffof oq blok */
+    background-color: rgba(255, 255, 255, 0.85); 
     padding: 20px;
     border-radius: 10px;
 }
 
-/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  padding: 15px 40px;
-  background-color: #1F7A8C;
-  color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    background: #1F7A8C; 
+    backdrop-filter: blur(6px); 
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    padding: 15px 40px;
 }
+
+
+body {
+    padding-top: 80px;
+}
+
+
 .nav-left .site-title a {
   color: #fff;
   text-decoration: none;
@@ -44,7 +54,6 @@ body {
   text-decoration: none;
 }
 
-/* Hero */
 .hero {
   display: flex;
   justify-content: space-between;
@@ -66,13 +75,19 @@ body {
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
+  transition: all 0.3s ease;
+}
+
+.btn-explore:hover {
+  background-color: #16697A;  
+  transform: translateY(-3px); 
+  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
 }
 .hero-image img {
   max-width: 500px;
   border-radius: 10px;
 }
 
-/* Classification Overview */
 .classification-overview {
   padding: 50px 10%;
 }
@@ -94,7 +109,7 @@ body {
   text-align: center;
 }
 
-/* Footer */
+
 footer {
   text-align: center;
   padding: 20px 0;
@@ -105,7 +120,7 @@ footer {
 
 .back-icon {
     font-size: 35px;
-    color: #0d0c0c;           /* back icon */
+    color: #0d0c0c;         
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: pointer;
@@ -113,7 +128,7 @@ footer {
 }
 
 .back-icon:hover {
-    color: #08090a;           /* hover accent */
+    color: #08090a;          
     transform: scale(1.1);
 }
 
@@ -125,7 +140,7 @@ footer {
     font-size: 24px;
     font-weight: 600;
     position: absolute;
-    left: 14%;
+    left: 19%;
     transform: translateX(-50%);
     color: #102C26;        
     margin-top: -50px;
@@ -207,9 +222,8 @@ footer {
     background: #45A049;      
 }
 
-/* Catalog Controls */
 .filters-container {
-    margin-top: 2%;
+  margin-top: 3%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -218,7 +232,6 @@ footer {
   margin-bottom: 30px;
   padding: 20px;
 }
-
 
 .left-side {
   flex: 1 1 48%; 
@@ -269,14 +282,14 @@ footer {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 25px;
-   margin: 0;
+   margin: 30px;
     padding: 40px;
     font-family: Arial, sans-serif;
     background: linear-gradient(
                     rgba(34, 139, 44, 0.5), 
                     rgba(34, 139, 45, 0.429)
                 ),
-                url('/img/image.png') no-repeat center center fixed; 
+                url('/img/1image.png') no-repeat center center fixed; 
     background-size: cover;
     background-attachment: fixed;
 }
