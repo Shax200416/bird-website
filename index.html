@@ -10,7 +10,6 @@
 
 <body>
 
-
 	<header class="navbar">
 		<div class="nav-left">
 			<img src="img/logo1-removebg-preview.png" class="logo">
@@ -21,26 +20,21 @@
 		<div class="nav-right">
 			<a href="index.html" data-i18n="nav_home">Home</a>
 			<a href="catalog.html" data-i18n="nav_catalog">Catalog</a>
+
 			<div class="language-switcher">
 				<button class="lang-btn" id="current-lang">
 					<img id="current-flag" src="img/flagsen.png" alt="EN">
 					<span id="current-text">EN</span>
 				</button>
+
 				<div class="lang-dropdown" id="lang-dropdown">
-					<button class="lang-btn" data-lang="en">
-						<img src="img/flagsen.png" alt="EN"> EN
-					</button>
-					<button class="lang-btn" data-lang="ru">
-						<img src="img/flagsru.png" alt="RU"> RU
-					</button>
-					<button class="lang-btn" data-lang="kg">
-						<img src="img/flagskg.png" alt="KG"> KG
-					</button>
+					<button class="lang-btn" data-lang="en"><img src="img/flagsen.png"> EN</button>
+					<button class="lang-btn" data-lang="ru"><img src="img/flagsru.png"> RU</button>
+					<button class="lang-btn" data-lang="kg"><img src="img/flagskg.png"> KG</button>
 				</div>
 			</div>
 		</div>
 	</header>
-
 
 	<section class="hero">
 		<div class="hero-text">
@@ -48,11 +42,11 @@
 			<p data-i18n="home_text">Explore birds by diet and habitat with multilingual support.</p>
 			<a href="catalog.html" class="btn-explore" data-i18n-btn="explore_btn">Explore Catalog →</a>
 		</div>
-		<div class="hero-image">
-			<img src="img/image.png" alt="	">
+		<div class="hero-image" id="hero-box">
+			<img id="hero-slider" src="" alt="Bird">
+			<div class="hero-bird-name" id="hero-bird-name"></div>
 		</div>
 	</section>
-
 
 	<section class="classification-overview">
 		<h2 data-i18n="overview_title">Classification Overview</h2>
@@ -83,14 +77,16 @@
 		</div>
 	</section>
 
-
 	<footer>
 		<p>
 			© 2026 |<a href="index.html" data-i18n="site_name">Bird Classification System</a>
 		</p>
 	</footer>
+	<div id="overlay"></div>
 
 	<script src="js/lang.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/hero-slider.js"></script>
 </body>
 
 </html>

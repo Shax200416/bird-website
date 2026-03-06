@@ -35,7 +35,6 @@ function renderBirds(list){
         return;
     }
 
-    
     list.forEach(b => {
         const card = document.createElement("div");
         card.className = "card";

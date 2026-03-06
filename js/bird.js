@@ -7,7 +7,6 @@ function renderBirdDetail() {
     const lang = localStorage.getItem("lang") || "en";
     if (!bird || !detail) return;
 
- 
     const dietText = (bird.diet || []).map(d => translations[lang]?.[d] || d).join(", ");
     const habitatText = (bird.habitat || []).map(h => translations[lang]?.[h] || h).join(", ");
 
@@ -23,7 +22,6 @@ function renderBirdDetail() {
             <img src="${bird.image}" alt="${bird.name[lang] || bird.name.en}" class="bird-detail-img">
         </div>
     `;
-
    
     const birdImg = detail.querySelector(".bird-detail-img");
 if (birdImg) {

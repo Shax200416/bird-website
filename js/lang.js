@@ -216,11 +216,9 @@ function translateFilters(lang){
     });
   }
 
-  
   const clearBtn = document.getElementById("clearFilters");
   if(clearBtn) clearBtn.textContent = translations[lang].clear;
 }
-
 
 function setLanguage(lang){
   if(!translations[lang]) return;
@@ -231,23 +229,29 @@ function setLanguage(lang){
   updateCurrentLangButton(lang);
 
   const dropdown = document.getElementById("lang-dropdown");
-  if(dropdown) dropdown.style.display = "none";
+  if(dropdown) dropdown.classList.remove("active");
 
-  
+  const overlay = document.getElementById("overlay");
+  if(overlay) overlay.classList.remove("active");
+
   if(typeof applyFilters === "function") applyFilters();
-
- 
   if(typeof renderBirdDetail === "function") renderBirdDetail();
 }
-
 
 document.addEventListener("DOMContentLoaded", ()=>{
   const currentBtn = document.getElementById("current-lang");
   const dropdown = document.getElementById("lang-dropdown");
+  const overlay = document.getElementById("overlay");
 
-  if(currentBtn && dropdown){
-    currentBtn.addEventListener("click", ()=>{ 
-      dropdown.style.display = dropdown.style.display === "flex" ? "none" : "flex"; 
+  if(currentBtn && dropdown && overlay){
+    currentBtn.addEventListener("click", ()=>{
+      dropdown.classList.toggle("active");
+      overlay.classList.toggle("active");
+    });
+
+    overlay.addEventListener("click", ()=>{
+      dropdown.classList.remove("active");
+      overlay.classList.remove("active");
     });
   }
 
@@ -258,8 +262,10 @@ document.addEventListener("DOMContentLoaded", ()=>{
   const savedLang = localStorage.getItem("lang") || "en";
   setLanguage(savedLang);
 
- 
   document.addEventListener("click", e=>{
-    if(!currentBtn.contains(e.target) && !dropdown.contains(e.target)) dropdown.style.display = "none";
+    if(!currentBtn.contains(e.target) && !dropdown.contains(e.target)){
+      dropdown.classList.remove("active");
+      overlay.classList.remove("active");
+    }
   });
 });
