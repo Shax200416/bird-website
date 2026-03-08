@@ -156,5 +156,165 @@ const birds = [
     kg: "Карагоз — чоң, сулуу суу канаттуулары, узун моюндары, грациоздуу кыймылдары жана күчтүү канаттары менен белгилүү. Сууда өсүмдүктөр, суу балырлары, курт-кумурскалар жана чакан суу жаныбарлары менен азыктанат. Көлдөрдө, дарыяларда, бассейндерде, саздак жерлерде жана эстуарийлерде жашайт, көбүнчө өмүр бою бир жуп менен жашайт. Суу жаныбарларынын жанында уя курат, 3–8 жумуртка салат. Аймактык жана аймактарын коргоо үчүн сырыктоо жана канаттарын көрсөтүү менен коргойт. Жакшы учат, узак миграцияга жөндөмдүү, түрүнө жана чөйрөсүнө жараша 10–30 жыл жашайт."
   },
   image: "/img/image10.png"
+},
+{
+  id: 11,
+  name: {
+    en: "Crow",
+    ru: "Ворона",
+    kg: "Карга"
+  },
+  diet: ["omnivore"],
+  habitat: ["urban","forests","farmlands"],
+  description: {
+    en: "Crows are highly intelligent birds known for their problem-solving abilities and complex social behavior. They feed on insects, seeds, fruits, small animals, and human food waste. Crows adapt easily to different environments including cities, forests, and agricultural lands. They often live in groups and communicate using a wide range of calls. Crows build nests in tall trees and usually lay 3–6 eggs. Their intelligence allows them to use tools and remember human faces.",
+    ru: "Вороны — очень умные птицы, известные своими способностями к решению задач и сложным социальным поведением. Питаются насекомыми, семенами, фруктами, мелкими животными и пищевыми отходами человека. Вороны легко приспосабливаются к различным средам — городам, лесам и сельскохозяйственным районам. Часто живут группами и общаются с помощью различных звуков. Строят гнезда на высоких деревьях и откладывают 3–6 яиц.",
+    kg: "Каргалар — абдан акылдуу канаттуулар, көйгөйлөрдү чечүү жөндөмү жана татаал социалдык жүрүм-туруму менен белгилүү. Курт-кумурскалар, үрөндөр, мөмөлөр, чакан жаныбарлар жана адамдардын азык калдыктары менен азыктанат. Шаарларда, токойлордо жана айыл жерлеринде оңой жашай алат. Көп учурда топ болуп жашайт жана ар кандай үндөр менен байланышат. Бийик дарактарга уя куруп 3–6 жумуртка салат."
+  },
+  image: "img/image11.png"
+},
+{
+  id: 12,
+  name: {
+    en: "Flamingo",
+    ru: "Фламинго",
+    kg: "Фламинго"
+  },
+  diet: ["omnivore"],
+  habitat: ["lakes","wetlands"],
+  description: {
+    en: "Flamingos are tall pink birds known for their long legs and curved bills. They feed mainly on algae, small crustaceans, and plankton found in shallow water. Flamingos live in large colonies around lakes, lagoons, and wetlands. Their pink color comes from pigments in their food. Flamingos build mud nests and usually lay one egg. They are famous for standing on one leg and forming large flocks.",
+    ru: "Фламинго — высокие розовые птицы с длинными ногами и изогнутым клювом. Питаются водорослями, мелкими ракообразными и планктоном. Живут большими колониями возле озёр и болот. Розовый цвет появляется благодаря пище. Строят гнезда из грязи и откладывают одно яйцо.",
+    kg: "Фламинго — узун буттуу жана ийри тумшуктуу кызгылт канаттуулар. Алар негизинен балырлар, майда суу жаныбарлары жана планктон менен азыктанат. Көлдөрдө жана саздак жерлерде чоң колония болуп жашайт. Кызгылт түсү тамактан алынган пигменттен пайда болот. Баткак уя куруп бир жумуртка салат."
+  },
+  image: "img/image12.png"
+},
+{
+  id: 13,
+  name: {
+    en: "Crane",
+    ru: "Журавль",
+    kg: "Турна"
+  },
+  diet: ["omnivore"],
+  habitat: ["wetlands"],
+  description: {
+    en: "Cranes are tall elegant birds known for their long legs and graceful movements. They feed on plants, seeds, insects, and small animals. Cranes usually live in wetlands, marshes, and grasslands. Many species migrate long distances between breeding and wintering areas. They build nests on the ground near water and usually lay 1–3 eggs. Cranes are famous for their loud calls and beautiful courtship dances.",
+    ru: "Журавли — высокие и грациозные птицы с длинными ногами. Питаются растениями, семенами, насекомыми и мелкими животными. Живут на болотах и лугах. Многие виды совершают дальние миграции. Гнезда строят на земле возле воды и откладывают 1–3 яйца.",
+    kg: "Турналар — узун буттуу жана кооз кыймылдуу канаттуулар. Өсүмдүктөр, үрөндөр, курт-кумурскалар жана чакан жаныбарлар менен азыктанат. Көбүнчө саздак жерлерде жана талааларда жашайт. Көпчүлүк түрлөрү узак аралыкка көчөт. Жерге уя куруп 1–3 жумуртка салат."
+  },
+  image: "img/image13.png"
+},
+{
+  id: 14,
+  name: {
+    en: "Kingfisher",
+    ru: "Зимородок",
+    kg: "Балыкчы куш"
+  },
+  diet: ["carnivore"],
+  habitat: ["rivers","lakes","wetlands"],
+  description: {
+    en: "Kingfishers are small brightly colored birds famous for their fishing skills. They hunt by diving into the water to catch fish, insects, and small aquatic animals. Kingfishers live near rivers, lakes, and wetlands where water is clear enough to see prey. They have sharp beaks and excellent vision for spotting fish. These birds nest in burrows dug into riverbanks and usually lay 4–7 eggs.",
+    ru: "Зимородки — маленькие яркие птицы, известные своими навыками ловли рыбы. Они ныряют в воду, чтобы поймать рыбу, насекомых и мелких водных животных. Живут возле рек, озёр и болот. Гнезда делают в норах на берегах рек и откладывают 4–7 яиц.",
+    kg: "Балыкчы куш — майда жана түстүү канаттуу, балык кармоо жөндөмү менен белгилүү. Алар сууга чумкуп балык, курт-кумурскалар жана суу жаныбарларын кармайт. Дарыялардын жана көлдөрдүн жанында жашайт. Дарыя жээгине уя казып 4–7 жумуртка салат."
+  },
+  image: "img/image14.png"
+},
+{
+  id: 15,
+  name: {
+    en: "Peacock",
+    ru: "Павлин",
+    kg: "Павлин"
+  },
+  diet: ["omnivore"],
+  habitat: ["forests","farmlands"],
+  description: {
+    en: "Peacocks are large colorful birds famous for their long, decorative tail feathers. They feed on seeds, insects, plants, and small reptiles. Peacocks usually live in forests, grasslands, and farmlands. The males display their beautiful tail feathers during courtship to attract females. They nest on the ground and usually lay 3–6 eggs. These birds are known for their loud calls and striking appearance.",
+    ru: "Павлины — крупные яркие птицы, известные своими длинными декоративными хвостовыми перьями. Питаются семенами, насекомыми, растениями и мелкими рептилиями. Живут в лесах, лугах и сельскохозяйственных районах. Самцы распускают хвост во время брачных танцев. Гнезда строят на земле и откладывают 3–6 яиц.",
+    kg: "Павлин — узун жана кооз куйрук жүндөрү менен белгилүү чоң канаттуу. Үрөндөр, өсүмдүктөр, курт-кумурскалар жана чакан жаныбарлар менен азыктанат. Токойлордо жана талааларда жашайт. Эркектери кооз куйругун жайып ургаачыларды тартат. Жерге уя куруп 3–6 жумуртка салат."
+  },
+  image: "img/image15.png"
+},
+{
+  id: 16,
+  name: {
+    en: "Pelican",
+    ru: "Пеликан",
+    kg: "Пеликан"
+  },
+  diet: ["carnivore"],
+  habitat: ["lakes","wetlands"],
+  description: {
+    en: "Pelicans are large water birds known for their long beaks and throat pouches used for catching fish. They live near lakes, rivers, and coastal waters. Pelicans often hunt in groups and scoop fish from the water. They build nests on the ground or on islands and lay 1–3 eggs. These birds are strong fliers and can travel long distances while searching for food.",
+    ru: "Пеликаны — крупные водные птицы с длинным клювом и горловым мешком для ловли рыбы. Обитают возле озёр, рек и морских побережий. Часто охотятся группами. Гнезда строят на земле или островах и откладывают 1–3 яйца.",
+    kg: "Пеликан — узун тумшугу жана балык кармоочу тамак капчыгы бар чоң суу канаттуусу. Көлдөрдө жана деңиз жээктеринде жашайт. Көп учурда топ болуп балык кармайт. Жерге же аралдарга уя куруп 1–3 жумуртка салат."
+  },
+  image: "img/image16.png"
+},
+{
+  id: 17,
+  name: {
+    en: "Robin",
+    ru: "Малиновка",
+    kg: "Робин"
+  },
+  diet: ["omnivore"],
+  habitat: ["forests","gardens","parks"],
+  description: {
+    en: "Robins are small birds known for their bright orange-red chest. They feed on insects, worms, fruits, and berries. Robins live in forests, gardens, and parks, often close to human homes. They build cup-shaped nests in trees or bushes and lay 3–5 eggs. Robins are famous for their beautiful singing, especially during early mornings.",
+    ru: "Малиновки — маленькие птицы с ярко-оранжевой грудью. Питаются насекомыми, червями, фруктами и ягодами. Живут в лесах, садах и парках. Строят гнезда на деревьях или кустах и откладывают 3–5 яиц.",
+    kg: "Робин — көкүрөгү кызгылт-сары болгон майда канаттуу. Курт-кумурскалар, мөмөлөр жана курттар менен азыктанат. Токойлордо, бакчаларда жана парктарда жашайт. Дарактарга уя куруп 3–5 жумуртка салат."
+  },
+  image: "img/image17.png"
+},
+{
+  id: 18,
+  name: {
+    en: "Stork",
+    ru: "Аист",
+    kg: "Лейлек"
+  },
+  diet: ["carnivore"],
+  habitat: ["wetlands","farmlands"],
+  description: {
+    en: "Storks are large birds with long legs and long beaks. They feed on fish, frogs, insects, and small animals. Storks live in wetlands, grasslands, and agricultural fields. They build large nests on trees, buildings, or towers. Many species migrate long distances between continents during different seasons.",
+    ru: "Аисты — крупные птицы с длинными ногами и длинным клювом. Питаются рыбой, лягушками, насекомыми и мелкими животными. Обитают на болотах, лугах и сельскохозяйственных землях. Строят большие гнезда на деревьях или зданиях.",
+    kg: "Лейлек — узун буттуу жана узун тумшуктуу чоң канаттуу. Балык, бака, курт-кумурскалар жана чакан жаныбарлар менен азыктанат. Саздак жерлерде жана талааларда жашайт. Дарактарга же имараттарга чоң уя курат."
+  },
+  image: "img/image18.png"
+},
+{
+  id: 19,
+  name: {
+    en: "Turkey",
+    ru: "Индейка",
+    kg: "Күркөө"
+  },
+  diet: ["omnivore"],
+  habitat: ["forests","farmlands"],
+  description: {
+    en: "Turkeys are large ground-dwelling birds native to North America. They feed on seeds, nuts, insects, and small reptiles. Turkeys usually live in forests and open grasslands. They are strong runners and can also fly short distances. Turkeys nest on the ground and lay 8–15 eggs. These birds are well known for their distinctive gobbling calls.",
+    ru: "Индейки — крупные наземные птицы родом из Северной Америки. Питаются семенами, орехами, насекомыми и мелкими рептилиями. Живут в лесах и открытых равнинах. Хорошо бегают и могут летать на короткие расстояния.",
+    kg: "Күркөө — чоң жер канаттуусу. Үрөндөр, жаңгактар, курт-кумурскалар жана майда жаныбарлар менен азыктанат. Токойлордо жана талааларда жашайт. Жакшы чуркайт жана кыска аралыкка уча алат."
+  },
+  image: "img/image19.png"
+},
+{
+  id: 20,
+  name: {
+    en: "Heron",
+    ru: "Цапля",
+    kg: "Көк куу"
+  },
+  diet: ["carnivore"],
+  habitat: ["wetlands","rivers","lakes"],
+  description: {
+    en: "Herons are tall wading birds known for their long legs and sharp beaks. They feed mainly on fish, frogs, insects, and small aquatic animals. Herons live near rivers, lakes, and wetlands where they slowly walk through shallow water to catch prey. They build nests in trees or reeds and usually lay 3–6 eggs.",
+    ru: "Цапли — высокие болотные птицы с длинными ногами и острым клювом. Питаются рыбой, лягушками, насекомыми и мелкими водными животными. Живут возле рек, озёр и болот.",
+    kg: "Көк куу — узун буттуу суу канаттуусу. Балык, бака жана суу жаныбарлары менен азыктанат. Дарыялардын жана көлдөрдүн жанында жашайт. Дарактарга же камыштарга уя курат."
+  },
+  image: "img/image20.png"
 }
 ];

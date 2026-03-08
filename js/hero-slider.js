@@ -5,7 +5,11 @@ const featuredBirds = [
     birds.find(b => b.id === 4),
     birds.find(b => b.id === 5)
 ];
+const totalBirds = document.getElementById("total-birds");
 
+if(totalBirds){
+    totalBirds.textContent = "Total Birds: " + birds.length;
+}
 const heroImg = document.getElementById("hero-slider");
 const heroName = document.getElementById("hero-bird-name");
 const heroBox = document.getElementById("hero-box");

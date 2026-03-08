@@ -135,6 +135,11 @@ backdrop-filter:blur(3px);
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 25px;
 }
+.overview-cards a{
+text-decoration:none;
+color:inherit;
+display:block;
+}
 .overview-cards .card {
   background-color: #fff;
   padding: 20px;
