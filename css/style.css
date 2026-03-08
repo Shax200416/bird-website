@@ -19,20 +19,30 @@ body {
 }
 
 .navbar {
-  display: flex;
-  justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 1000;
-
-    background: #023336; 
-    backdrop-filter: blur(6px); 
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 10px 30px;
+
+    background: rgba(2, 51, 54, 0.65);
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 0 0 15px 15px;
+
+    z-index: 1000;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
 }
 
+.navbar.scrolled {
+    background: rgba(2, 51, 54, 0.85); 
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
 
 body {
     padding-top: 80px;
@@ -134,11 +144,28 @@ backdrop-filter:blur(3px);
 }
 
 footer {
-  text-align: center;
-  padding: 20px 0;
-  background-color: #023336;
-  color: #fff;
-  margin-top: 50px;
+    text-align: center;
+    padding: 20px 0;
+    background: rgba(2, 51, 54, 0.85); 
+    backdrop-filter: blur(12px) saturate(120%);
+    -webkit-backdrop-filter: blur(12px) saturate(120%);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.15);
+    border-radius: 15px 15px 0 0;
+
+    color: #fff;
+    font-weight: 500;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #4DA674; 
 }
 
 .back-icon {
@@ -191,6 +218,9 @@ footer {
     color: #fff;          
     font-weight: 500;
     font-size: 18px;
+}
+.nav-right a:hover {
+    color: #4DA674;
 }
 
 #overlay{
@@ -346,7 +376,7 @@ footer {
   cursor: pointer;
 }
 .right-side select:hover, .right-side button:hover {
-  background-color: #023336;
+  background-color: #0d3739c7;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }

@@ -85,7 +85,7 @@ const birds = [
     kg: "Бүркүт"
   },
   diet: ["carnivore"],
-  habitat: ["forests", "grasslands", "deserts", "urban areas", "tree hollows", "barns"],
+  habitat: ["forests", "deserts", "urban areas", "tree hollows", "barns"],
   description: {
     en: "Owls are nocturnal birds of prey known for their large eyes, silent flight, and excellent hearing. They feed mainly on small mammals, birds, insects, and occasionally fish. Owls inhabit diverse environments including forests, grasslands, deserts, and urban areas, often nesting in tree hollows, cliffs, or barns. They are solitary and territorial, using calls to communicate during the night. Their eyes are adapted for low-light vision, allowing them to hunt efficiently at night. Owls lay 2–12 eggs per season, depending on the species, and are considered symbols of wisdom in many cultures.",
     ru: "Совы — ночные хищные птицы, известные своими большими глазами, тихим полётом и отличным слухом. Питаются в основном мелкими млекопитающими, птицами, насекомыми и иногда рыбой. Совы обитают в различных средах — леса, степи, пустыни и города, часто гнездятся в дуплах деревьев, на утёсах или в амбарах. Они одиночные и территориальные, используют крики для общения ночью. Их глаза приспособлены к низкой освещённости, что позволяет эффективно охотиться ночью. Совы откладывают 2–12 яиц за сезон в зависимости от вида и считаются символами мудрости во многих культурах.",
