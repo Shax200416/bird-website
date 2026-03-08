@@ -26,11 +26,11 @@ const translations = {
     carnivore: "Carnivore",
     herbivore: "Herbivore",
     insectivore: "Insectivore",
-    forest: "Forest",
+    forests: "Forests",
     urban: "City",
     rural: "Rural",
-    wetland: "Wetland",
-    mountain: "Mountain",
+    wetlands: "Wetland",
+    mountains: "Mountains",
     plains: "Plains",
     cliffs: "Cliffs",
     "river valleys": "River Valleys",
@@ -82,11 +82,11 @@ const translations = {
     carnivore: "Хищные",
     herbivore: "Травоядные",
     insectivore: "Насекомоядные",
-    forest: "Лес",
+    forests: "Лес",
     urban: "Город",
     rural: "Село",
-    wetland: "Водоём",
-    mountain: "Горы",
+    wetlands: "Водоём",
+    mountains: "Горы",
     plains: "Равнины",
     cliffs: "Скалы",
     "river valleys": "Речные долины",
@@ -138,11 +138,11 @@ const translations = {
     carnivore: "Жырткыч",
     herbivore: "Чөп жечү",
     insectivore: "Курт жечү",
-    forest: "Токой",
+    forests: "Токой",
     urban: "Шаар",
     rural: "Айыл",
-    wetland: "Суу жери",
-    mountain: "Тоолор",
+    wetlands: "Суу жери",
+    mountains: "Тоолор",
     plains: "Теңдеш талаалар",
     cliffs: "Скалар",
     "river valleys": "Дарыя өрөөндөрү",
@@ -204,15 +204,21 @@ function translateFilters(lang){
 
   if(dietSelect){
     Array.from(dietSelect.options).forEach(opt=>{
-      if(opt.value && translations[lang][opt.value]) opt.textContent = translations[lang][opt.value];
-      else if(opt.value === "") opt.textContent = translations[lang].diet_all;
+      if(opt.value === "") {
+        opt.textContent = translations[lang].diet_all; 
+      } else if(translations[lang][opt.value]){
+        opt.textContent = translations[lang][opt.value];
+      }
     });
   }
 
   if(habitatSelect){
     Array.from(habitatSelect.options).forEach(opt=>{
-      if(opt.value && translations[lang][opt.value]) opt.textContent = translations[lang][opt.value];
-      else if(opt.value === "") opt.textContent = translations[lang].habitat_all;
+      if(opt.value === "") {
+        opt.textContent = translations[lang].habitat_all; 
+      } else if(translations[lang][opt.value]){
+        opt.textContent = translations[lang][opt.value];
+      }
     });
   }
 

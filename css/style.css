@@ -8,11 +8,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background: linear-gradient(
-                    rgba(34, 139, 44, 0.5), 
-                    rgba(34, 139, 45, 0.429)
-                ),
-                url('/img/1image.png') no-repeat center center fixed; 
+    background-color: #4DA674; 
     background-size: cover;
     background-attachment: fixed;
 }
@@ -31,7 +27,7 @@ body {
     width: 100%;
     z-index: 1000;
 
-    background: #1F7A8C; 
+    background: #023336; 
     backdrop-filter: blur(6px); 
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     padding: 10px 30px;
@@ -70,7 +66,7 @@ body {
 
 .btn-explore {
   padding: 10px 25px;
-  background-color: #1F7A8C;
+  background-color: #023336;
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
@@ -78,9 +74,9 @@ body {
 }
 
 .btn-explore:hover {
-  background-color: #16697A;  
+  transition: transform 0.2s, box-shadow 0.2s;
   transform: translateY(-3px); 
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 9px 20px #023336;
 }
 
 .hero-image{
@@ -107,7 +103,7 @@ transform:scale(1.05);
 position:absolute;
 bottom:15px;
 left:15px;
-background:rgba(0,0,0,0.55);
+background:#fff;
 color:#fff;
 padding:8px 14px;
 border-radius:8px;
@@ -140,14 +136,14 @@ backdrop-filter:blur(3px);
 footer {
   text-align: center;
   padding: 20px 0;
-  background-color: #1F7A8C;
+  background-color: #023336;
   color: #fff;
   margin-top: 50px;
 }
 
 .back-icon {
     font-size: 30px;
-    color: #0d0c0c;         
+    color: #fff;         
     text-decoration: none;
     transition: transform 0.3s ease, color 0.3s ease;
     cursor: pointer;
@@ -155,7 +151,7 @@ footer {
 }
 
 .back-icon:hover {
-    color: #08090a;          
+    color: #f8f9fa;          
     transform: scale(1.1);
 }
 
@@ -169,12 +165,13 @@ footer {
     position: absolute;
     left: 15%;
     transform: translateX(-50%);
-    color: #102C26;        
+    color: #fff;        
     margin-top: -50px;
 
 }
 
 .site-title2{
+  color: white;
     position: absolute;
     left: 50%;
     margin-top: -30px;
@@ -191,7 +188,7 @@ footer {
 
 .nav-right a {
     text-decoration: none;
-    color: #102C26;          
+    color: #fff;          
     font-weight: 500;
     font-size: 18px;
 }
@@ -222,8 +219,8 @@ footer {
 
 .lang-btn{
   border: none;
-  background-color: #102C26;
-  color: white;
+  background-color: white;
+  color: black;
   cursor: pointer;
   border-radius: 6px;
   padding: 5px 10px;
@@ -242,7 +239,7 @@ footer {
 }
 
 .lang-btn:hover{
-  background: #45A049;
+  background: #4DA674;
 }
 
 .lang-dropdown{
@@ -252,7 +249,7 @@ footer {
   top: 120%;
   left: 0;
   border-radius: 8px;
-  box-shadow: 0 8px 20px rgba(198,192,192,0.2);
+  box-shadow: 0 8px 20px rgba(10, 10, 10, 0.2);
   overflow: hidden;
   z-index: 1000;
   transform: translateY(-10px);
@@ -321,7 +318,7 @@ footer {
   transition: box-shadow 0.3s;
 }
 .left-side input:hover, .left-side input:focus {
-  box-shadow: 0 0 8px rgba(31,122,140,0.5);
+  box-shadow: 0 0 8px #023336;
   outline: none;
 }
 .left-side .search-icon {
@@ -349,7 +346,7 @@ footer {
   cursor: pointer;
 }
 .right-side select:hover, .right-side button:hover {
-  background-color: #1F7A8C;
+  background-color: #023336;
   color: #fff;
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
@@ -361,11 +358,7 @@ footer {
    margin: 30px;
     padding: 40px;
     font-family: Arial, sans-serif;
-    background: linear-gradient(
-                    rgba(34, 139, 44, 0.5), 
-                    rgba(34, 139, 45, 0.429)
-                ),
-                url('/img/1image.png') no-repeat center center fixed; 
+   background-color: #4DA674;
     background-size: cover;
     background-attachment: fixed;
 }
@@ -381,7 +374,7 @@ footer {
 }
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  box-shadow: 0 10px 20px #023336;
 }
 .card img {
   width: 100%;
@@ -405,7 +398,7 @@ footer {
 
 #noBirds {
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #060505;
   grid-column: 1 / -1;
   margin-top: 100px;
