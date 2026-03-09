@@ -5,11 +5,12 @@ const featuredBirds = [
     birds.find(b => b.id === 4),
     birds.find(b => b.id === 5)
 ];
-const totalBirds = document.getElementById("total-birds");
 
+const totalBirds = document.getElementById("total-birds");
 if(totalBirds){
     totalBirds.textContent = "Total Birds: " + birds.length;
 }
+
 const heroImg = document.getElementById("hero-slider");
 const heroName = document.getElementById("hero-bird-name");
 const heroBox = document.getElementById("hero-box");
@@ -25,7 +26,7 @@ function updateHero() {
     heroImg.style.opacity = 0;
 
     setTimeout(() => {
-        heroImg.src = bird.image;
+        heroImg.src = bird.images[0];  
         heroName.textContent = bird.name[lang] || bird.name.en;
         heroImg.style.opacity = 1;
     }, 300);

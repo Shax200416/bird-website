@@ -30,30 +30,30 @@ function renderBirds(list){
     }
 
     if(list.length === 1){
-        const b = list[0];
-        const card = document.createElement("div");
-        card.className = "card single-bird";
-        card.innerHTML = `
-            <img src="${b.image}" alt="${b.name[lang]}">
-            <div class="card-content">
-                <h3>${b.name[lang]}</h3>
-            </div>`;
-        card.onclick = () => { window.location.href = `bird.html?id=${b.id}`; };
-        container.appendChild(card);
-        return;
-    }
+    const b = list[0];
+    const card = document.createElement("div");
+    card.className = "card single-bird";
+    card.innerHTML = `
+        <img src="${b.images[0]}" alt="${b.name[lang]}">
+        <div class="card-content">
+            <h3>${b.name[lang]}</h3>
+        </div>`;
+    card.onclick = () => { window.location.href = `bird.html?id=${b.id}`; };
+    container.appendChild(card);
+    return;
+}
 
-    list.forEach(b => {
-        const card = document.createElement("div");
-        card.className = "card";
-        card.innerHTML = `
-            <img src="${b.image}" alt="${b.name[lang]}">
-            <div class="card-content">
-                <h3>${b.name[lang]}</h3>
-            </div>`;
-        card.onclick = () => { window.location.href = `bird.html?id=${b.id}`; };
-        container.appendChild(card);
-    });
+   list.forEach(b => {
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+        <img src="${b.images[0]}" alt="${b.name[lang]}">
+        <div class="card-content">
+            <h3>${b.name[lang]}</h3>
+        </div>`;
+    card.onclick = () => { window.location.href = `bird.html?id=${b.id}`; };
+    container.appendChild(card);
+});
 }
 
 function applyFilters(){
