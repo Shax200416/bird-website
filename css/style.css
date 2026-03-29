@@ -65,7 +65,7 @@ body {
     width: 0%;
     background: #4DA674;
     border-radius: 10px;
-    animation: loadBar 1.0s ease forwards;
+    transition: width 0.3s ease; 
 }
 
 @keyframes loadBar {

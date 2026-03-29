@@ -461,9 +461,41 @@
 				prepareQuiz()
 				loadQuiz()
 			}
-			setTimeout(() => {
-				document.getElementById('loading-screen').classList.add('hidden')
-			}, 1500)
+
+			const heroIds = [8, 2, 10, 4, 5]
+			const featuredIds = [21, 5, 10, 9]
+
+			const criticalSrcs = [
+				...heroIds.map(id => birds.find(b => b.id === id)?.images[0]),
+				...featuredIds.map(id => birds.find(b => b.id === id)?.images[0])
+			].filter(Boolean)
+
+			const unique = [...new Set(criticalSrcs)]
+			const bar = document.querySelector('.loading-bar')
+			const loader = document.getElementById('loading-screen')
+
+			let loaded = 0
+			const total = unique.length
+
+			function onResource() {
+				loaded++
+				const percent = Math.round((loaded / total) * 100)
+				if (bar) bar.style.width = percent + '%'
+				if (loaded >= total) {
+					setTimeout(() => loader.classList.add('hidden'), 300)
+				}
+			}
+
+			if (total === 0) {
+				loader.classList.add('hidden')
+				return
+			}
+
+			unique.forEach(src => {
+				const img = new Image()
+				img.onload = img.onerror = onResource
+				img.src = src
+			})
 		})
 	</script>
 
