@@ -213,7 +213,7 @@ clearBtn.addEventListener("click", ()=>{
     renderBirds(birds);
 });
 
-const GEMINI_API_KEY = 'AIzaSyCU7tCgqsdu96TMLk9h6oBucOqtwHWSZhw';
+const GEMINI_API_KEY = 'AIzaSyDCXA6ofD8u_qySmPjTfjOUmkHCiSLbBR8';
 
 document.getElementById('imageInput').addEventListener('change', (e) => {
     const file = e.target.files[0];
