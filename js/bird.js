@@ -32,7 +32,6 @@ function renderBirdDetail() {
 </div>
 `;
 
-    // Rasm slider
     let index = 0;
     const img = document.getElementById("birdSlider");
     const left = detail.querySelector(".arrow-left");
@@ -50,7 +49,6 @@ function renderBirdDetail() {
         img.src = bird.images[index];
     });
 
-    // Rasm animatsiya
     const birdImg = detail.querySelector(".bird-detail-img");
     if(birdImg){
         setTimeout(() => {
@@ -59,7 +57,6 @@ function renderBirdDetail() {
         }, 50);
     }
 
-    // Audio play/stop
     let currentAudio = null;
     const playBtn = document.getElementById('playAudio');
 
