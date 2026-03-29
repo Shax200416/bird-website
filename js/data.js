@@ -437,5 +437,26 @@ const birds = [
     "img/image21.1.png",
     "img/image21.2.png"
   ]
+},
+{
+  id: 22,
+  name: {
+    en: "Penguin",
+    ru: "Пингвин",
+    kg: "Пингвин"
+  },
+  audio: "/audio/penguin.mp3",
+  diet: ["carnivore"],
+  habitat: ["Oceans", "Coastlines", "Antarctica"],
+  description: {
+    en: "Penguins are flightless seabirds that are perfectly adapted for life in the water. Their wings have evolved into flippers, allowing them to swim at speeds up to 25 km/h. They feed on fish, squid, and krill. Penguins live mainly in the Southern Hemisphere, especially in Antarctica. They are highly social birds and breed in large colonies, usually laying 1–2 eggs.",
+    ru: "Пингвины — нелетающие морские птицы, превосходно приспособленные к жизни в воде. Их крылья превратились в ласты, позволяющие плавать со скоростью до 25 км/ч. Питаются рыбой, кальмарами и крилем. Обитают преимущественно в Южном полушарии, особенно в Антарктиде. Гнездятся большими колониями, откладывая 1–2 яйца.",
+    kg: "Пингвиндер — учпаган деңиз канаттуулары, сууда жашоого мыкты ылайыкташкан. Канаттары сүзгүчкө айланып, саатына 25 км ылдамдыкта жүзүүгө мүмкүндүк берет. Балык, кальмар жана криль менен азыктанат. Негизинен Түштүк жарым шарда, айрыкча Антарктидада жашайт. Чоң колонияларда уялашып, 1–2 жумуртка тууйт."
+  },
+  images: [
+    "img/image22.png",
+    "img/image22.1.png",
+    "img/image22.2.png"
+  ]
 }
 ];
