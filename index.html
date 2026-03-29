@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title data-i18n="home_title">Classification Birds</title>
+	<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+	<div id="loading-screen">
+		<img src="img/logo1-removebg-preview.png" class="loading-logo" alt="logo">
+		<p class="loading-title">Classification Birds</p>
+		<div class="loading-bar-wrapper">
+			<div class="loading-bar"></div>
+		</div>
+	</div>
+
+	<header class="navbar">
+		<div class="nav-left">
+			<img src="img/logo1-removebg-preview.png" class="logo">
+			<h2 class="site-title">
+				<a href="index.html">Classification Birds</a>
+			</h2>
+		</div>
+		<div class="nav-right">
+			<a href="index.html" data-i18n="nav_home">Home</a>
+			<a href="catalog.html" data-i18n="nav_catalog">Catalog</a>
+			<div class="language-switcher">
+				<button class="lang-btn" id="current-lang">
+					<img id="current-flag" src="img/flagsen.png" alt="EN">
+					<span id="current-text">EN</span>
+				</button>
+				<div class="lang-dropdown" id="lang-dropdown">
+					<button class="lang-btn" data-lang="en"><img src="img/flagsen.png"> EN</button>
+					<button class="lang-btn" data-lang="ru"><img src="img/flagsru.png"> RU</button>
+					<button class="lang-btn" data-lang="kg"><img src="img/flagskg.png"> KG</button>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<section class="hero">
+		<div class="hero-text">
+			<h1 data-i18n="home_title">Bird Classification System</h1>
+			<p data-i18n="home_text">Explore birds by diet and habitat with multilingual support.</p>
+			<a href="catalog.html" class="btn-explore" data-i18n-btn="explore_btn">Explore Catalog →</a>
+		</div>
+		<div class="hero-image" id="hero-box">
+			<img id="hero-slider" src="" alt="Bird">
+			<div class="hero-bird-name" id="hero-bird-name"></div>
+		</div>
+	</section>
+
+	<div class="bird-banner">
+		<div class="bird-banner-track" id="bannerTrack"></div>
+	</div>
+
+	<section class="stats-section">
+		<div class="stat-item" onclick="window.location.href='catalog.html'">
+			<h2 class="counter" data-target="21">0</h2>
+			<p data-i18n="stats_item">Bird Species</p>
+		</div>
+		<div class="stat-item" onclick="window.location.href='catalog.html?focus=diet'">
+			<h2 class="counter" data-target="4">0</h2>
+			<p data-i18n="diet_types">Diet Types</p>
+		</div>
+		<div class="stat-item" onclick="window.location.href='catalog.html?focus=habitat'">
+			<h2 class="counter" data-target="10">0</h2>
+			<p data-i18n="habitats">Habitats</p>
+		</div>
+		<div class="stat-item" id="langStat">
+			<h2 class="counter" data-target="3" data-noplus="true">0</h2>
+			<p data-i18n="languages">Languages</p>
+		</div>
+	</section>
+
+	<section class="featured-section">
+		<h2 class="featured-title" data-i18n="featured_title">Featured Birds</h2>
+		<div class="featured-grid" id="featuredGrid"></div>
+	</section>
+
+	<section class="dyk-quiz-section">
+
+		<div class="dyk-box">
+			<div class="dyk-top">
+				<img id="dyk-img" src="" alt="Bird" class="dyk-img">
+				<div class="dyk-right">
+					<div class="dyk-badge" data-i18n="dyk_title">Did you know?</div>
+					<p id="dyk-text" class="dyk-text"></p>
+					<button class="dyk-btn" id="dyk-next">→</button>
+				</div>
+			</div>
+			<a id="dyk-link" href="#" class="dyk-more" data-i18n="learn_more">Learn more →</a>
+		</div>
+
+		<div class="quiz-botd-wrapper">
+
+			<div class="quiz-box">
+				<div class="quiz-header">
+					<h2 data-i18n="quiz_title">🎯 Bird Quiz</h2>
+					<p data-i18n="quiz_subtitle">Can you guess the bird?</p>
+					<span class="quiz-progress" id="quiz-progress">1 / 10</span>
+				</div>
+				<div class="quiz-card" id="quiz-card">
+					<img id="quiz-img" src="" alt="Bird" class="quiz-img">
+					<div id="quiz-options" class="quiz-options"></div>
+					<div id="quiz-result" class="quiz-result"></div>
+				</div>
+				<button id="quiz-next" class="quiz-next-btn" style="display:none" data-i18n="quiz_next">Next →</button>
+			</div>
+
+			<div class="botd-box">
+				<div class="botd-label" data-i18n="bird_of_the_day">🌟 Bird of the Day</div>
+				<img id="botd-img" src="" alt="Bird" class="botd-img">
+				<div class="botd-info">
+					<h3 id="botd-name"></h3>
+					<p id="botd-desc"></p>
+					<div id="botd-badges" class="botd-badges"></div>
+					<a id="botd-link" href="#" class="dyk-more" data-i18n="learn_more">Learn more →</a>
+				</div>
+			</div>
+
+		</div>
+
+	</section>
+
+	<footer class="footer">
+		<div class="footer-top">
+			<div class="footer-brand">
+				<div class="logo-area">
+					<img src="img/logo1-removebg-preview.png" class="logo">
+					<h2>Classification Birds</h2>
+				</div>
+				<p data-i18n="footer">Bird Classification System is an educational website...</p>
+				<div class="social-icons">
+					<a href="https://www.twitter.com/?hl=en"><img src="icons/image copy.png" alt=""></a>
+					<a href="https://www.instagram.com/?hl=en"><img src="icons/image.png" alt=""></a>
+					<a href="https://www.facebook.com/?hl=en"><img src="icons/image copy 2.png" alt=""></a>
+					<a href="https://www.github.com/?hl=en"><img src="icons/image copy 3.png" alt=""></a>
+				</div>
+			</div>
+			<div class="footer-links">
+				<div>
+					<h3 data-i18n="footer_pages">Pages</h3>
+					<a href="index.html" data-i18n="nav_home">Home</a>
+					<a href="catalog.html" data-i18n="nav_catalog">Catalog</a>
+				</div>
+				<div>
+					<h3 data-i18n="footer_diet">Filter by Diet</h3>
+					<a href="catalog.html?diet=carnivore" data-i18n="carnivore">Carnivore</a>
+					<a href="catalog.html?diet=herbivore" data-i18n="herbivore">Herbivore</a>
+					<a href="catalog.html?diet=omnivore" data-i18n="omnivore">Omnivore</a>
+					<a href="catalog.html?diet=insectivore" data-i18n="insectivore">Insectivore</a>
+				</div>
+				<div>
+					<h3 data-i18n="footer_habitat">Filter by Habitat</h3>
+					<a href="catalog.html?habitat=urban" data-i18n="urban">City</a>
+					<a href="catalog.html?habitat=forests" data-i18n="forests">Forest</a>
+					<a href="catalog.html?habitat=mountains" data-i18n="mountains">Mountains</a>
+					<a href="catalog.html?habitat=rivers" data-i18n="rivers">Rivers</a>
+				</div>
+				<div>
+					<h3 data-i18n="footer_contact">Contact</h3>
+					<a href="mailto:shaxruh6114@gmail.com">✉ shaxruh6114@gmail.com</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="footer-bottom">
+			<p data-i18n="footer_bottom">© 2026 Bird Classification System | Created for learning purposes</p>
+			<div class="footer-legal">
+				<a href="#">Privacy Policy</a>
+				<a href="#">Terms of Service</a>
+				<a href="#">Cookies</a>
+			</div>
+		</div>
+
+	</footer>
+
+	<div id="overlay"></div>
+
+	<script src="js/lang.js"></script>
+	<script src="js/data.js"></script>
+	<script src="js/hero-slider.js"></script>
+
+	<script>
+		const counters = document.querySelectorAll('.counter')
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					const el = entry.target
+					const target = +el.dataset.target
+					let count = 0
+					const step = Math.ceil(target / 40)
+					const timer = setInterval(() => {
+						count += step
+						if (count >= target) {
+							el.textContent = el.dataset.noplus ? target : target + '+'
+							clearInterval(timer)
+						} else {
+							el.textContent = count
+						}
+					}, 40)
+					observer.unobserve(el)
+				}
+			})
+		}, { threshold: 0.5 })
+		counters.forEach(c => observer.observe(c))
+
+		function loadBanner() {
+			const lang = localStorage.getItem('lang') || 'en'
+			const track = document.getElementById('bannerTrack')
+			if (!track || typeof birds === 'undefined') return
+			track.innerHTML = ''
+			const doubled = [...birds, ...birds]
+			doubled.forEach(b => {
+				const item = document.createElement('div')
+				item.className = 'banner-item'
+				item.innerHTML = `
+                    <img src="${b.images[0]}" alt="${b.name[lang]}">
+                    <span>${b.name[lang] || b.name.en}</span>
+                    <span class="banner-dot">✦</span>
+                `
+				item.addEventListener('click', () => { window.location.href = `bird.html?id=${b.id}` })
+				item.style.cursor = 'pointer'
+				track.appendChild(item)
+			})
+		}
+
+		function loadFeatured() {
+			const lang = localStorage.getItem('lang') || 'en'
+			const grid = document.getElementById('featuredGrid')
+			if (!grid || typeof birds === 'undefined') return
+			const ids = [21, 5, 10, 9]
+			grid.innerHTML = ''
+			ids.forEach(id => {
+				const b = birds.find(b => b.id === id)
+				if (!b) return
+				const dietBadges = (b.diet || []).map(d =>
+					`<span class="f-badge">🍽 ${translations[lang]?.[d] || d}</span>`
+				).join('')
+				const card = document.createElement('div')
+				card.className = 'featured-card'
+				card.innerHTML = `
+                    <img src="${b.images[0]}" alt="${b.name[lang]}">
+                    <div class="featured-card-info">
+                        <h3>${b.name[lang] || b.name.en}</h3>
+                        <div class="f-badges">${dietBadges}</div>
+                    </div>
+                `
+				card.addEventListener('click', () => { window.location.href = `bird.html?id=${b.id}` })
+				grid.appendChild(card)
+			})
+		}
+
+		function loadBotd() {
+			const lang = localStorage.getItem('lang') || 'en'
+			if (typeof birds === 'undefined') return
+			const dayIndex = Math.floor(Date.now() / (1000 * 60 * 60 * 24)) % birds.length
+			const b = birds[dayIndex]
+			const img = document.getElementById('botd-img')
+			const name = document.getElementById('botd-name')
+			const desc = document.getElementById('botd-desc')
+			const badges = document.getElementById('botd-badges')
+			const link = document.getElementById('botd-link')
+			if (!img || !b) return
+			img.src = b.images[0]
+			name.textContent = b.name[lang] || b.name.en
+			desc.textContent = b.description[lang] || b.description.en
+			link.href = `bird.html?id=${b.id}`
+			badges.innerHTML = [
+				...(b.diet || []).map(d => `<span class="botd-badge-item">🍽 ${translations[lang]?.[d] || d}</span>`),
+				...(b.habitat || []).slice(0, 2).map(h => `<span class="botd-badge-item">🌍 ${translations[lang]?.[h] || h}</span>`)
+			].join('')
+		}
+
+		const dykFacts = {
+			en: [
+				{ text: "Some birds can sleep while flying!", birdId: 21 },
+				{ text: "Owls can rotate their heads up to 270 degrees.", birdId: 6 },
+				{ text: "The Peregrine Falcon is the fastest animal on Earth, reaching speeds over 320 km/h.", birdId: 5 },
+				{ text: "Parrots can mimic human speech and even understand words.", birdId: 4 },
+				{ text: "Flamingos get their pink color from the food they eat.", birdId: 12 },
+				{ text: "Hummingbirds are the only birds that can fly backwards.", birdId: 21 },
+				{ text: "Eagles can see up to 8 times more clearly than humans.", birdId: 2 },
+				{ text: "Crows are one of the smartest animals in the world.", birdId: 11 },
+				{ text: "A group of flamingos is called a flamboyance.", birdId: 12 }
+			],
+			ru: [
+				{ text: "Некоторые птицы могут спать во время полёта!", birdId: 21 },
+				{ text: "Совы могут поворачивать голову на 270 градусов.", birdId: 6 },
+				{ text: "Сапсан развивает скорость свыше 320 км/ч.", birdId: 5 },
+				{ text: "Попугаи могут имитировать человеческую речь.", birdId: 4 },
+				{ text: "Фламинго получают розовый цвет от пищи.", birdId: 12 },
+				{ text: "Колибри — единственные птицы, летающие назад.", birdId: 21 },
+				{ text: "Орлы видят в 8 раз чётче, чем люди.", birdId: 2 },
+				{ text: "Вороны — одни из самых умных животных.", birdId: 11 },
+				{ text: "Группа фламинго называется фламбуанс.", birdId: 12 }
+			],
+			kg: [
+				{ text: "Кээ бир куштар учуп жүрүп уктай алышат!", birdId: 21 },
+				{ text: "Үкүлөр башын 270 градуска буруша алат.", birdId: 6 },
+				{ text: "Лачын 320 км/сааттан ашык ылдамдыкка жетет.", birdId: 5 },
+				{ text: "Тоту куштар адам сөзүн туурай алат.", birdId: 4 },
+				{ text: "Фламинго жеген тамагынан кызгылт түс алат.", birdId: 12 },
+				{ text: "Колибри артка учуу жөндөмдүүлүгүнө ээ жалгыз куш.", birdId: 21 },
+				{ text: "Бүркүттөр адамга караганда 8 эсе так көрөт.", birdId: 2 },
+				{ text: "Карга дүйнөдөгү эң акылдуу жаныбарлардын бири.", birdId: 11 },
+				{ text: "Фламинго тобу фламбуанс деп аталат.", birdId: 12 }
+			]
+		}
+
+		let dykIndex = 0
+		function showFact() {
+			const lang = localStorage.getItem('lang') || 'en'
+			const facts = dykFacts[lang] || dykFacts.en
+			const fact = facts[dykIndex % facts.length]
+			const bird = birds.find(b => b.id === fact.birdId)
+			const text = document.getElementById('dyk-text')
+			const img = document.getElementById('dyk-img')
+			const link = document.getElementById('dyk-link')
+			text.style.opacity = 0
+			img.style.opacity = 0
+			setTimeout(() => {
+				text.textContent = fact.text
+				text.style.opacity = 1
+				if (bird) {
+					img.src = bird.images[0]
+					img.style.opacity = 1
+					link.href = `bird.html?id=${bird.id}`
+				}
+			}, 300)
+		}
+
+		document.getElementById('dyk-next').addEventListener('click', () => {
+			dykIndex++
+			showFact()
+		})
+
+		setInterval(() => {
+			dykIndex++
+			showFact()
+		}, 8000)
+
+		document.getElementById('langStat').addEventListener('click', () => {
+			window.scrollTo({ top: 0, behavior: 'smooth' })
+			setTimeout(() => { document.getElementById('current-lang').click() }, 600)
+		})
+
+		let quizIndex = 0
+		let quizScore = 0
+		const QUIZ_TOTAL = 10
+		let quizQuestions = []
+
+		function prepareQuiz() {
+			const shuffled = [...birds].sort(() => Math.random() - 0.5)
+			quizQuestions = []
+			for (let i = 0; i < QUIZ_TOTAL; i++) {
+				const correct = shuffled[i]
+				const others = [...birds].filter(b => b.id !== correct.id).sort(() => Math.random() - 0.5).slice(0, 3)
+				const options = [...others, correct].sort(() => Math.random() - 0.5)
+				quizQuestions.push({ correct, options })
+			}
+		}
+
+		function loadQuiz() {
+			const lang = localStorage.getItem('lang') || 'en'
+			const result = document.getElementById('quiz-result')
+			const nextBtn = document.getElementById('quiz-next')
+			const quizCard = document.getElementById('quiz-card')
+
+			if (quizIndex >= QUIZ_TOTAL) {
+				const percent = Math.round((quizScore / QUIZ_TOTAL) * 100)
+				let emoji = '😢'
+				if (percent >= 80) emoji = '🏆'
+				else if (percent >= 50) emoji = '👍'
+				else if (percent >= 30) emoji = '🙂'
+				quizCard.innerHTML = `
+                    <div class="quiz-final">
+                        <div class="quiz-emoji">${emoji}</div>
+                        <h3 class="quiz-final-score">${quizScore} / ${QUIZ_TOTAL}</h3>
+                        <p class="quiz-final-percent">${percent}%</p>
+                        <p class="quiz-final-msg">${getQuizMsg(percent, lang)}</p>
+                        <button class="quiz-restart-btn" id="quiz-restart">🔄 ${lang === 'ru' ? 'Заново' : lang === 'kg' ? 'Кайра' : 'Restart'}</button>
+                    </div>
+                `
+				nextBtn.style.display = 'none'
+				document.getElementById('quiz-restart').addEventListener('click', () => {
+					quizIndex = 0
+					quizScore = 0
+					prepareQuiz()
+					quizCard.innerHTML = `
+                        <img id="quiz-img" src="" alt="Bird" class="quiz-img">
+                        <div id="quiz-options" class="quiz-options"></div>
+                        <div id="quiz-result" class="quiz-result"></div>
+                    `
+					loadQuiz()
+				})
+				return
+			}
+
+			result.textContent = ''
+			nextBtn.style.display = 'none'
+			document.getElementById('quiz-progress').textContent = `${quizIndex + 1} / ${QUIZ_TOTAL}`
+			const { correct, options } = quizQuestions[quizIndex]
+			document.getElementById('quiz-img').src = correct.images[0]
+			const optionsDiv = document.getElementById('quiz-options')
+			optionsDiv.innerHTML = ''
+			options.forEach(b => {
+				const btn = document.createElement('button')
+				btn.className = 'quiz-option'
+				btn.textContent = b.name[lang] || b.name.en
+				btn.addEventListener('click', () => {
+					document.querySelectorAll('.quiz-option').forEach(el => {
+						el.disabled = true
+						if (el.textContent === (correct.name[lang] || correct.name.en)) el.classList.add('correct')
+					})
+					if (b.id === correct.id) {
+						btn.classList.add('correct')
+						document.getElementById('quiz-result').textContent = translations[lang].correct || '✅ Correct!'
+						document.getElementById('quiz-result').style.color = '#4DA674'
+						quizScore++
+					} else {
+						btn.classList.add('wrong')
+						document.getElementById('quiz-result').textContent = translations[lang].wrong || '❌ Wrong!'
+						document.getElementById('quiz-result').style.color = '#dc3545'
+					}
+					quizIndex++
+					nextBtn.style.display = 'inline-block'
+				})
+				optionsDiv.appendChild(btn)
+			})
+		}
+
+		function getQuizMsg(percent, lang) {
+			if (lang === 'ru') {
+				if (percent >= 80) return 'Отличный результат! Вы эксперт по птицам!'
+				if (percent >= 50) return 'Неплохо! Продолжайте изучать птиц!'
+				return 'Не расстраивайтесь, попробуйте ещё раз!'
+			} else if (lang === 'kg') {
+				if (percent >= 80) return 'Мыкты натыйжа! Сиз куштар боюнча эксперт!'
+				if (percent >= 50) return 'Жаман эмес! Куштарды изилдей бериңиз!'
+				return 'Капа болбоңуз, кайра аракет кылыңыз!'
+			} else {
+				if (percent >= 80) return 'Excellent! You are a bird expert!'
+				if (percent >= 50) return 'Not bad! Keep exploring birds!'
+				return "Don't give up, try again!"
+			}
+		}
+
+		document.getElementById('quiz-next').addEventListener('click', loadQuiz)
+
+		window.addEventListener('load', () => {
+			if (typeof birds !== 'undefined') {
+				loadBanner()
+				loadFeatured()
+				loadBotd()
+				showFact()
+				prepareQuiz()
+				loadQuiz()
+			}
+			setTimeout(() => {
+				document.getElementById('loading-screen').classList.add('hidden')
+			}, 1500)
+		})
+	</script>
+
+</body>
+
+</html>
