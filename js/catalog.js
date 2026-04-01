@@ -213,7 +213,10 @@ clearBtn.addEventListener("click", ()=>{
     renderBirds(birds);
 });
 
-const GEMINI_API_KEY = 'AIzaSyDCXA6ofD8u_qySmPjTfjOUmkHCiSLbBR8';
+
+const GEMINI_API_KEY = 'AIzaSyD9YN9fFIjAyWNTmU1L9Gqa2GfbSSG4kEI';
+
+let geminiTimeout = null;
 
 document.getElementById('imageInput').addEventListener('change', (e) => {
     const file = e.target.files[0];
@@ -223,62 +226,71 @@ document.getElementById('imageInput').addEventListener('change', (e) => {
     const resultDiv = document.getElementById('img-search-result');
     resultDiv.textContent = translations[lang].analyzing || '🔍 Analyzing...';
 
-    const reader = new FileReader();
-    reader.onload = () => {
-        const base64 = reader.result.split(',')[1];
+    clearTimeout(geminiTimeout);
+    geminiTimeout = setTimeout(() => {
+        const reader = new FileReader();
+        reader.onload = () => {
+            const base64 = reader.result.split(',')[1];
 
-        const xhr = new XMLHttpRequest();
-        xhr.open('POST', `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${GEMINI_API_KEY}`);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.onload = () => {
-            const data = JSON.parse(xhr.responseText);
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash-lite:generateContent?key=${GEMINI_API_KEY}`);
+            xhr.setRequestHeader('Content-Type', 'application/json');
+            xhr.onload = () => {
+                const data = JSON.parse(xhr.responseText);
 
-            if(data.error){
-                const msg = data.error.message.split('.')[0];
-                resultDiv.textContent = '❌ ' + msg;
-                return;
-            }
+                if(data.error){
+                    const msg = data.error.message.split('.')[0];
+                    resultDiv.textContent = '❌ ' + msg;
+                    return;
+                }
 
-            const birdName = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim().toLowerCase();
+                const birdName = data.candidates?.[0]?.content?.parts?.[0]?.text?.trim().toLowerCase();
 
-            if(!birdName){
-                resultDiv.textContent = translations[lang].could_not_identify || '❌ Could not identify the bird.';
-                return;
-            }
+                if(!birdName){
+                    resultDiv.textContent = translations[lang].could_not_identify || '❌ Could not identify the bird.';
+                    return;
+                }
 
-            const found = birds.find(b => {
-                const enName = b.name.en.toLowerCase();
-                const geminiWords = birdName.split(' ').filter(w => w.length > 2);
-                const enWords = enName.split(' ');
-                if(enName === birdName) return true;
-                if(enName.includes(birdName) || birdName.includes(enName)) return true;
-                const matchCount = geminiWords.filter(w => enWords.includes(w)).length;
-                return matchCount >= 1;
-            });
+                const found = birds.find(b => {
+                    const enName = b.name.en.toLowerCase();
+                    const ruName = b.name.ru.toLowerCase();
+                    const kgName = b.name.kg.toLowerCase();
+                    const geminiWords = birdName.split(' ').filter(w => w.length > 2);
 
-            if(found){
-                resultDiv.innerHTML = `${translations[lang].found || '✅ Found'}: <strong>${found.name[lang]}</strong>`;
-                setTimeout(() => { window.location.href = `bird.html?id=${found.id}`; }, 1200);
-            } else {
-                resultDiv.innerHTML = `${translations[lang].identified || '🤖 Identified'}: <strong>${birdName}</strong> — ${translations[lang].not_in_catalog || 'not in catalog yet'}.`;
-                state.search = birdName.split(' ')[0];
-                searchInput.value = birdName;
-                applyFilters();
-            }
+                    for(const name of [enName, ruName, kgName]){
+                        if(name === birdName) return true;
+                        if(name.includes(birdName) || birdName.includes(name)) return true;
+                        const nameWords = name.split(' ');
+                        const matchCount = geminiWords.filter(w => nameWords.includes(w)).length;
+                        if(matchCount >= 1) return true;
+                    }
+                    return false;
+                });
+
+                if(found){
+                    resultDiv.innerHTML = `${translations[lang].found || '✅ Found'}: <strong>${found.name[lang]}</strong>`;
+                    setTimeout(() => { window.location.href = `bird.html?id=${found.id}`; }, 1200);
+                } else {
+                    resultDiv.innerHTML = `${translations[lang].identified || '🤖 Identified'}: <strong>${birdName}</strong> — ${translations[lang].not_in_catalog || 'not in catalog yet'}.`;
+                    state.search = birdName.split(' ')[0];
+                    searchInput.value = birdName;
+                    applyFilters();
+                }
+            };
+            xhr.onerror = () => {
+                resultDiv.textContent = '❌ Network error';
+            };
+            xhr.send(JSON.stringify({
+                contents: [{
+                    parts: [
+                        { text: `This is an image of a bird. What is the English common name? Reply with ONLY the bird name, nothing else.` },
+                        { inline_data: { mime_type: file.type, data: base64 } }
+                    ]
+                }]
+            }));
         };
-        xhr.onerror = () => {
-            resultDiv.textContent = '❌ Network error';
-        };
-        xhr.send(JSON.stringify({
-            contents: [{
-                parts: [
-                    { text: `This is an image of a bird. What is the English common name? Reply with ONLY the bird name, nothing else.` },
-                    { inline_data: { mime_type: file.type, data: base64 } }
-                ]
-            }]
-        }));
-    };
-    reader.readAsDataURL(file);
+        reader.readAsDataURL(file);
+    }, 1000);
 });
 
 renderBirds(birds);
